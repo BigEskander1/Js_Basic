@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="form">
+        <h1>Temperature Conversion</h1>
+
+        <input type="number" id="textBox" value="0"><br><br>
+        
+        <input type="radio" id="toFahrenheit" name="unit">
+        <label for="toFahrenheit">Celsius => Fahrenheit</label> <br>
+
+        <input type="radio" id="toCelsius" name="unit">
+        <label for="toCelsius" >Fahrenheit => Celsius</label> <br>
+
+        <button type="button" id="btn" onclick="convert()">Convert</button>
+
+        <p id="result"> select a unit</p>
+
+    </form>
+    
+    <script>
+            var textBox = document.getElementById("textBox");
+            var toFahrenheit = document.getElementById("toFahrenheit");
+            var toCelsius = document.getElementById("toCelsius");
+            var result = document.getElementById("result");
+
+        function convert(){
+
+            if(toFahrenheit.checked){
+                result.textContent = (textBox.value * 9/5) + 32;
+            } else if(toCelsius.checked){
+                result.textContent = (textBox.value - 32) * 5/9;
+            } else {
+                result.textContent = "select a unit";
+            }
+        }
+
+        
+    </script>
+
+    <style>
+        body{
+            text-align: center;
+            font: 1em sans-serif;
+            background-color:rgb(158, 144, 148) ;
+        }
+        h1{
+            color: blue;
+        }
+        form{
+            text-align: center;
+            margin : auto;
+            width: 50%;
+            border: 3px solid black;
+            padding: 10px;
+            background-color: rgb(210, 221, 144);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+    </style>
+</body>
+</html>
